@@ -139,13 +139,13 @@ task main()
 {
 	int QVALUES[6][4] = {{0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}};
 
-	// 0,0       0, 1      0, 2      0,3     //FIRST VALUE INDICES - STATES								//SECOND VALUE INDICES - ACTIONS
-	// 1,0       1, 1	   1, 2      1,3     //0: No bumpers pressed (desired)						    //0: Move forwards
-	// 2,0       2, 1	   2, 2      2,3     //1: Left bumper pressed									//1: Move backwards
-	// 3,0       3, 1	   3, 2      3,3     //2: Right bumper pressed									//2: Turn right
-    // 4,0       4, 1      4, 2      4,3     //3: Back bumper pressed 									//3: Turn left
-	// 5,0  	 5, 1      5, 2      5,3     //4: L+R bumper pressed
-                                             //5: All bumpers pressed
+	// 0,0       0, 1      0, 2      0,3     //FIRST VALUE INDICES - STATES							//SECOND VALUE INDICES - ACTIONS
+	// 1,0       1, 1      1, 2      1,3     //0: No bumpers pressed (desired)					        //0: Move forwards
+	// 2,0       2, 1      2, 2      2,3     //1: Left bumper pressed							//1: Move backwards
+	// 3,0       3, 1      3, 2      3,3     //2: Right bumper pressed							//2: Turn right
+    	// 4,0       4, 1      4, 2      4,3     //3: Back bumper pressed 							//3: Turn left
+	// 5,0       5, 1      5, 2      5,3     //4: L+R bumper pressed
+                                                 //5: All bumpers pressed
 
 	float alpha = 0.1;      //Alpha is the rate of learning, the rate at which new data replaces previous knowledge.
 	float discount = 0.5;		//Discount is the relative value of short term success versus long term success.
@@ -154,7 +154,7 @@ task main()
 	while(true)
 	{
 		state = getState();
-    max = -32000;
+    		max = -32000;
 		action = 4;
 
 		for(c = 0; c < 4; c++)
